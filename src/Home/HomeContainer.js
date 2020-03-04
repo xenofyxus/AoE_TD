@@ -1,7 +1,6 @@
 import HomePresentation from '../Presentational/HomePresentation';
 import {connect} from 'react-redux';
 
-
 const numDispatchToProps = (dispatch) => 
         ({setNum: x=>dispatch({type: 'SET_NO_GUESTS', numberOfGuests: x})});
 const mapStateToProps = state => 
