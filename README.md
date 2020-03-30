@@ -1,68 +1,48 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## AoE Tower Defence.
 
-## Available Scripts
+This project is a Tower Defence game that uses data from the Age of Empires II API [https://age-of-empires-2-api.herokuapp.com/docs/] . 
+You will be able to build a team of units that will defend against oncoming waves of enemies.
+I am using React, Redux and some Node.js running on firebase cloud functions.
 
-In the project directory, you can run:
 
-### `npm start`
+### So far:
+So far I have setup the initial structure of the project. With the navigation bar routing and the general views I want to have in the final project. I have also started on the backend structure of the game.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Still planning to do:
+For the mid project review I have not yet started on the UI aspect of the game. The help section is supposed to display the possible teams you can select, and information about the units you can build with that team. In addition to this I want to implement a database in firebase where the highscores are stored.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### File Structure:
 
-### `npm test`
+#### Folders and files
+FUNCTIONS folder, you can find the cloud functions. 
+    - Index.js -proxies the API-call from the client to the 
+    
+SRC folder, you can find the code for the actual web app. 
+   - Index.js, wraps the main app in the store provider and the router
+   - App.js, contains the main app and the routing
+ACTIONS
+   - apiActions.js, handles the connection between the API calls and the redux store
+   - fetchTeams.js, does the API call.
+ASSETS
+   - Logo for the game. :)
+CONTAINER
+   - GameContainer.js, Handles the data to display from the backend.
+   - HelpContainer.js, Handles the data for the general gameplay instructions.
+   - InfoContainer.js, Handles the data for the Info view
+   - RankingContainer.js, will handle the data for the Highscore view.
+GAME ENGINE
+   - Will handle the interaction with the backend for the game.
+PRESENTATIONAL
+   - GameView.js, going to handle the presentational part of the game.
+   - HeaderNav.js, Navigation bar component.
+   - HelpPresentation.js, Displaying the gameplay instructions.
+   - HomePresentation.js, Home screen view.
+   - InfoPresentation.js, View for the infromation about the teams and units.
+   - RankingView.js, Displaying the highscore.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+REDUCERS
+   - apiReducer.js, API state reducer.
+   - currentGame.js, Game state reducer.
+   - rootReducer.js, Combines reducers. 
+  
+  
