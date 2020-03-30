@@ -18,13 +18,13 @@ export function teamsReducer(state = initialState, action) {
             return {
                 ...state,
                 pending: false,
-                teams: action.payload
+                teams: action.teams
             }
         case FETCH_TEAMS_ERROR:
             return {
                 ...state,
                 pending: false,
-                error: action.error
+                error: action.data
             }
         default: 
             return state;

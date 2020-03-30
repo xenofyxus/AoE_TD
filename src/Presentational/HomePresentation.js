@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import logo from '../assets/AOE_TD_LOGO.png';
+import {Link} from 'react-router-dom'
 
-const HomePresentation=()=> (
+const HomePresentation=(props)=> {
+  return(
     <div class="row text-center">
     <div class="col my-auto">
-      <button type="button" class="btn btn-info">I want to read more!</button>
+    <Link to='/info'>
+      <button type="button" href="/info" class="btn btn-info">I want to read more!</button>
+    </Link>
     </div>
     <div class="col my-5">
       <div class="media-body text-center my-5">
@@ -23,6 +27,7 @@ const HomePresentation=()=> (
 
     </div>
   </div>
-);
+)
+};
 
 export default HomePresentation;
