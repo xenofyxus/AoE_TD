@@ -1,17 +1,18 @@
 import React from 'react';
-
-const InfoPresentation = (teams) => (
+import {Link} from 'react-router-dom'
+import {useEffect} from 'react'
+import fetchTeams from '../actions/fetchTeams';
+import axios from 'axios';
+const InfoPresentation = function(props){
+  const teams = getTeams();
+  return(
     <div className="row text-center">
     <div className="col my-auto">
         <div className="form-group">
             {/*
-            <label htmlFor="sel1">Select list:</label>
-            <select className="form-control" id="sel1">
-              {params.teams.map((name) => <option>{name}</option>)
-              }
-            </select>
+              TODO: SELECT TEAM
             */}
-            {JSON.stringify(teams.teams)}
+            {JSON.stringify(teams)}
             </div>
         </div>
     <div className="col my-5">
@@ -24,12 +25,28 @@ const InfoPresentation = (teams) => (
       </div>
     </div>
     <div className="col my-auto">
+    <Link to="/game">
     <button type="button" className="btn btn-success">I want to play!</button>
+    </Link>
     </div>
     <div className="col">
 
     </div>
   </div>
 );
+}
+
+const getTeams = () =>
+{axios.get("https://us-central1-aoe-td.cloudfunctions.net/API_PROXY")
+.then(res => res.json())
+.then(res => {
+    if(res.error) {
+        throw(res.error);
+    }
+    return res;
+})
+.catch(error => {
+    return("api-call went wrong")
+})}
 
 export default InfoPresentation;

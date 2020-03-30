@@ -4,26 +4,26 @@ import {Link} from 'react-router-dom'
 
 const HomePresentation=(props)=> {
   return(
-    <div class="row text-center">
-    <div class="col my-auto">
+    <div className="row text-center">
+    <div className="col my-auto">
     <Link to='/info'>
-      <button type="button" href="/info" class="btn btn-info">I want to read more!</button>
+      <button type="button" href="/info" className="btn btn-info">I want to read more!</button>
     </Link>
     </div>
-    <div class="col my-5">
-      <div class="media-body text-center my-5">
-        <h5 class="mt-0">Welcome!</h5>
+    <div className="col my-5">
+      <div className="media-body text-center my-5">
+        <h5 className="mt-0">Welcome!</h5>
         <p>
         This game is a classic tower defence game. Place your units on strategic positions to force the incoming waves of enemies to fight them.
         Make sure to keep an eye on your economy so you do not run out of resources.
         </p>
-        <img src={logo} width="100" height="100" class="my-auto" alt=""/>
+        <img src={logo} width="100" height="100" className="my-auto" alt=""/>
       </div>
     </div>
-    <div class="col my-auto">
-    <button type="button" class="btn btn-success">I want to play!</button>
+    <div className="col my-auto">
+    <button type="button" className="btn btn-success">I want to play!</button>
     </div>
-    <div class="col">
+    <div className="col">
 
     </div>
   </div>

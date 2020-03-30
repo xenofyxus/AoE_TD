@@ -20,4 +20,6 @@ function fetchTeams() {
         })
     }
 }
+
+
 export default fetchTeams;
