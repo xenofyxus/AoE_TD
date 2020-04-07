@@ -1,10 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
 import {useEffect} from 'react'
-import fetchTeams from '../actions/fetchTeams';
+
 import axios from 'axios';
 const InfoPresentation = function(props){
-  const teams = getTeams();
   return(
     <div className="row text-center">
     <div className="col my-auto">
@@ -12,7 +11,7 @@ const InfoPresentation = function(props){
             {/*
               TODO: SELECT TEAM
             */}
-            {JSON.stringify(teams)}
+            {JSON.stringify(props.teams)}
             </div>
         </div>
     <div className="col my-5">
@@ -35,18 +34,5 @@ const InfoPresentation = function(props){
   </div>
 );
 }
-
-const getTeams = () =>
-{axios.get("https://us-central1-aoe-td.cloudfunctions.net/API_PROXY")
-.then(res => res.json())
-.then(res => {
-    if(res.error) {
-        throw(res.error);
-    }
-    return res;
-})
-.catch(error => {
-    return("api-call went wrong")
-})}
 
 export default InfoPresentation;

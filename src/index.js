@@ -7,8 +7,6 @@ import { Provider } from 'react-redux';
 import {BrowserRouter as Router} from 'react-router-dom'
 
 import rootReducer from './Reducers/rootReducer';
-
-
 import App from './App.js'
 
 const initialState = {};

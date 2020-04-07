@@ -5,7 +5,7 @@ import {
 } from "react-router-dom";
 
 import HeaderNav from './Presentational/HeaderNav'
-import HomeContainer from './Home/HomeContainer';
+import HomeContainer from './Container/Home/HomeContainer';
 import InfoContainer from './Container/Info/InfoContainer';
 
 // App layout

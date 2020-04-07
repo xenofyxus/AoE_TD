@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import fetchTeamsAction from '../../actions/fetchTeams';
 import {getTeamsError, getTeams, getTeamsPending} from '../../Reducers/apiReducer';
 
 import InfoPresentation from '../../Presentational/InfoPresentation';
@@ -14,7 +13,11 @@ class InfoContainer extends Component {
         super(props);
         
     }
+    componentDidMount(){
+        fetchTeams();
+    }
     render() {
+       
         const {teams, error, pending} = this.props;
         return (
             <div>
@@ -25,9 +28,8 @@ class InfoContainer extends Component {
 }
 
 const mapDispatchToProps = dispatch => {
-    return {
-      fetchTeams: () => dispatch(fetchTeams())
-    }
+    dispatch(fetchTeams())
+    return {temp: null}
   }
 
 const mapStateToProps = state => ({teams : state.teams})
