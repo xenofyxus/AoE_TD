@@ -15,8 +15,7 @@ function getTeams() {
         }
         const x = JSON.stringify(data);
         console.log("Result" + x);
-        resolve(data);
-        return null;
+        return resolve(data);
     })
     .catch(error => {
         const x = JSON.stringify(error);
@@ -46,8 +45,9 @@ exports.API_PROXY = functions.https.onRequest((req, res) => {
     getTeams().then((teamData)=>
     {
         console.log("We are in the then")
-        res.status(200).send(teamData)
-        return(teamData)
+        console.log(teamData)
+        console.log("ASD")
+        return res.status(200).send(teamData);
     }
     )
     .catch(error => {

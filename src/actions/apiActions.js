@@ -18,6 +18,6 @@ export function fetchTeamsSuccess(teams) {
 export function fetchTeamsError(error) {
     return {
         type: FETCH_TEAMS_ERROR,
-        error: error
+        error: error.message
     }
 }

@@ -32,7 +32,18 @@ const mapDispatchToProps = dispatch => {
     return {temp: null}
   }
 
-const mapStateToProps = state => ({teams : state.teams})
+const mapStateToProps = state => (
+        {
+            teams : state.teams,
+            selectorList : state.teams.teams.map(civ => 
+                (
+                {"value" : civ.id, 
+                "label" : civ.name}
+                )
+                )
+        }
+    )
+
 
 export default connect(
     mapStateToProps,

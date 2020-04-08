@@ -1,25 +1,41 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
 import {useEffect} from 'react'
+import Select from 'react-select';
 
 import axios from 'axios';
+import { teamsReducer } from '../Reducers/apiReducer';
 const InfoPresentation = function(props){
   return(
     <div className="row text-center">
     <div className="col my-auto">
         <div className="form-group">
-            {/*
-              TODO: SELECT TEAM
-            */}
-            {JSON.stringify(props.teams)}
-            </div>
+            {
+              
+            }  
+            <Select
+              className="basic-single"
+              classNamePrefix="select"
+              defaultValue={props.selectorList[0]}
+              isDisabled={false}
+              isLoading={false}
+              isClearable={true}
+              isRtl={false}
+              isSearchable={true}
+              name="Teams"
+              options={props.selectorList}
+            />
+          </div>
         </div>
     <div className="col my-5">
       <div className="media-body text-center my-5">
-        <h5 className="mt-0">Welcome!</h5>
+        <h5 className="mt-0">Unique Unit</h5>
         <p>
-        This game is a classic tower defence game. Place your units on strategic positions to force the incoming waves of enemies to fight them.
-        Make sure to keep an eye on your economy so you do not run out of resources.
+          {
+          /* TODO: SHOW UNIQUE UNIT PER SELECTED TEAM */
+          
+          }
+          
         </p>
       </div>
     </div>

@@ -7,16 +7,17 @@ function fetchTeams() {
     return dispatch => {
         dispatch(fetchTeamsPending());
         axios.get(API_ENDPOINT)
-        .then(res => res.json())
         .then(res => {
-            console.log("Getting result.")
+            console.log("DISPATCHING FETCH TEAMS SUCCESS")
             if(res.error) {
+                console.log("THROWING ERROR")
                 throw(res.error);
-            }
-            dispatch(fetchTeamsSuccess(res.json()));
-            return res.teams;
+            };
+            console.log("RESULT: " + JSON.stringify(res))
+            return dispatch(fetchTeamsSuccess(res.data.civilizations));
         })
         .catch(error => {
+            console.log("DISPATCHING ERROR")
             dispatch(fetchTeamsError(error));
         })
     }
