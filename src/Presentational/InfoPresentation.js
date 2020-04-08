@@ -18,12 +18,13 @@ const InfoPresentation = function(props){
               classNamePrefix="select"
               defaultValue={props.selectorList[0]}
               isDisabled={false}
-              isLoading={false}
+              isLoading={props.pending}
               isClearable={true}
               isRtl={false}
               isSearchable={true}
               name="Teams"
               options={props.selectorList}
+              onChange={props.selectedCivUpdate}
             />
           </div>
         </div>
@@ -31,11 +32,9 @@ const InfoPresentation = function(props){
       <div className="media-body text-center my-5">
         <h5 className="mt-0">Unique Unit</h5>
         <p>
-          {
-          /* TODO: SHOW UNIQUE UNIT PER SELECTED TEAM */
+          {props.uniqueUnit}
           
-          }
-          
+
         </p>
       </div>
     </div>
